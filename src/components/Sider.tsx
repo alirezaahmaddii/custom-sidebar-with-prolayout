@@ -4,7 +4,7 @@ import { ProLayout } from '@ant-design/pro-components';
 import { useMemo } from 'react';
 import { buildProLayoutRouteFromClientRoutes } from './buildProLayoutRouteFromClientRoutes';
 
-export const CustomSider = (props: { children: React.ReactNode }) => {
+export const CustomSider = () => {
   const { clientRoutes } = useAppData();
   const location = useLocation();
 
@@ -30,8 +30,6 @@ export const CustomSider = (props: { children: React.ReactNode }) => {
           {dom}
         </a>
       )}
-    >
-      {props.children}
-    </ProLayout>
+    />
   );
 };
