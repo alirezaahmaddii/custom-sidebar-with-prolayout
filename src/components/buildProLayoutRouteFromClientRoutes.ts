@@ -12,15 +12,15 @@ export function buildProLayoutRouteFromClientRoutes(clientRoutes: any[]) {
         (route) =>
           route.path &&
           !route.isLayout &&
-          !route.path.includes('components') && // حذف مسیرهای modal و غیرمنو
-          !route.path.startsWith('/:') // حذف dynamic route ها
+          !route.path.includes('components') &&
+          !route.path.startsWith('/:')
       )
       .map((route) => {
         const fullPath = route.path.startsWith('/')
           ? route.path
           : '/' + route.path;
 
-        const cleanPath = fullPath.replace(/\/index$/, ''); // حذف /index
+        const cleanPath = fullPath.replace(/\/index$/, '');
         const name = cleanPath.replace(/^\/|\/$/g, '') || 'Home';
 
         return {
